@@ -1,0 +1,54 @@
+.main-trivia{
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    text-align: left;
+}
+
+.button-start{
+    align-self: center;
+    width: 80%;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    background-image: linear-gradient(90deg, #3a0ca3, #b5179e);
+    color: #4cc9f0;
+    font-size: 1.875rem;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.button-start:hover{
+    background-image: linear-gradient(90deg, #b5179e, #7209b7);
+}
+
+.answer-button{
+    margin-right: 10px;
+    margin-bottom: 10px;
+    padding: 10px;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.answer-button:hover{
+    background-color: #7209b7;
+    color: #4cc9f0;
+}
+
+.correct{
+    background-color: rgb(0, 204, 0) !important;
+    color: black !important;
+}
+
+.wrong{
+    background-color: red !important;
+    color: black !important;
+}
+
+.answer-button:disabled{
+    background-color: #c4dcf7;
+    color: #aa9fb1;
+    cursor:default;
+}

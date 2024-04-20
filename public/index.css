@@ -1,0 +1,78 @@
+* {
+  box-sizing: border-box;
+}
+
+body{
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  margin: 0;
+  background-color: #b2d4fb;
+}
+
+.main{
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+}
+
+.welcome{
+  margin: 20px;
+  padding: 20px;
+}
+
+nav{
+  display: flex;
+  justify-content: space-between;
+  padding: 0 20px;
+  box-shadow: 0px 2px 2px #f72585;
+  background-image: linear-gradient(90deg, #3a0ca3 1%, #b5179e 50%);
+  color: #4cc9f0;
+}
+
+.nav-button{
+  height: 30px;
+  width: 30px;
+  align-self: center;
+  border: none;
+  background-color: transparent;
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  font-size: 1.25rem;
+  font-weight: bold;
+  cursor: pointer;
+  color: #4cc9f0;
+}
+
+.drop-menu-icon{
+  width: 20px;
+  height: 20px;
+}
+
+.drop-menu{
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  right: 0;
+  position: relative;
+  border-radius: 0 0 0 5px;
+  background-image: linear-gradient(90deg, #3a0ca3, #b5179e, #f72585);
+}
+
+.drop-menu-elem{
+  border: none;
+  background-color: transparent;
+  box-shadow: 0px 1px 1px #f72585;
+  font-size: 1.4rem;
+  font-weight: bold;
+  text-align: left;
+  padding: 30px;
+  color: #4cc9f0;
+  cursor: pointer;
+}
+
+.last{
+  border-radius: 0 0 0 5px;
+}
+
+.drop-menu-elem:hover{
+  background-image: linear-gradient(#b5179e, #7209b7);
+}
