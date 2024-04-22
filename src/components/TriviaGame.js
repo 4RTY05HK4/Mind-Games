@@ -13,22 +13,6 @@ export function TriviaGame(){
         setGameRunning(true)
     }
 
-    function RenderQuestions(){
-        let temp = []
-        for(let i = 0; i < questions.length; i++){
-            temp = [
-                ...temp, 
-                <Question 
-                    key={i} 
-                    questionObj={questions[i]}
-                    addPoint={addPoint}
-                    incAnswers={incAnswers}
-                />
-            ]
-        }
-        return temp
-    }
-
     const [Points, setPoints] = useState(0)
     const [noAnswers, setNoAnswers] = useState(0)
     
@@ -45,8 +29,21 @@ export function TriviaGame(){
             {
                 gameRunning ?
                 <div>
-                    {noAnswers === 10 && <h1>{Points}/10</h1>}
-                    <RenderQuestions />
+                    {
+                        questions.map((i, index) => 
+                            <Question 
+                            key={index} 
+                            questionObj={i}
+                            addPoint={addPoint}
+                            incAnswers={incAnswers}
+                            />
+                        )
+                    }
+                    {
+                        noAnswers >= 10 && <div>
+                            <h1>You got {Points}/10!</h1>
+                        </div>
+                    }
                 </div>
                 :
                 <button 

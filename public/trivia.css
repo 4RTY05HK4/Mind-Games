@@ -47,6 +47,10 @@
     color: black !important;
 }
 
+.checked{
+    border: 5px gray solid !important;
+}
+
 .answer-button:disabled{
     background-color: #c4dcf7;
     color: #aa9fb1;

@@ -20,7 +20,7 @@ export function DropDownMenu(props){
                 Thing 3
             </button>
             <button 
-                className="drop-menu-elem last"
+                className="drop-menu-elem"
                 onClick={() => props.setMainComponent(3)}
             >
                 Thing 4
