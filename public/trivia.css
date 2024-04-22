@@ -42,11 +42,6 @@
     color: black !important;
 }
 
-.wrong{
-    background-color: red !important;
-    color: black !important;
-}
-
 .checked{
     border: 5px gray solid !important;
 }

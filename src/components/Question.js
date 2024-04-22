@@ -10,8 +10,8 @@ export function Question(props) {
     setAnswers((prevState) => prevState.map((x) => decodeURI(x)))
     setAnswers((prevState) => prevState.sort((a, b) => a.length - b.length))
     setAnswers((prevState) =>
-      prevState.map((x) => ({
-        answer: x,
+      prevState.map((elem) => ({
+        answer: elem,
         disabled: false,
         checked: false,
         correct: false,
@@ -20,49 +20,41 @@ export function Question(props) {
   }, [question])
 
   function checkAnswer(answer) {
-    if (answer === decodeURI(correct_answer)) {
-      setAnswers((prevState) => {
-        return prevState.map((ans) => {
-          return ans.answer === answer
-            ? {
-                ...ans,
-                disabled: true,
-                checked: true,
-                correct: true,
-              }
-            : {
-                ...ans,
-                disabled: true,
-              }
-        })
+    setAnswers((prevState) =>
+      prevState.map((ans) => {
+        return {
+          ...ans,
+          disabled: true,
+        }
       })
+    )
+
+    setAnswers((prevState) =>
+      prevState.map((ans) => {
+        return ans.answer === answer
+          ? {
+              ...ans,
+              checked: true,
+            }
+          : ans
+      })
+    )
+
+    setAnswers((prevState) =>
+      prevState.map((ans) => {
+        return ans.answer === decodeURI(correct_answer)
+          ? {
+              ...ans,
+              correct: true,
+            }
+          : ans
+      })
+    )
+
+    if (answer === decodeURI(correct_answer)) {
       props.addPoint()
       props.incAnswers()
     } else {
-      setAnswers((prevState) =>
-        prevState.map((ans) => {
-          if (ans.answer === answer) {
-            return {
-              ...ans,
-              disabled: true,
-              checked: true,
-              correct: false,
-            }
-          } else if (ans.answer === decodeURI(correct_answer)) {
-            return {
-              ...ans,
-              disabled: true,
-              checked: false,
-              correct: true,
-            }
-          } else {
-            return {
-              ...ans,
-              disabled: true,
-            }
-          }
-        })
-      )
       props.incAnswers()
     }
   }
