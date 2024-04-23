@@ -4,7 +4,11 @@ import { AnswerButton } from "./AnswerButton"
 export function Question(props) {
   const { question, correct_answer, incorrect_answers } = props.questionObj
 
-  const [answers, setAnswers] = useState([correct_answer, ...incorrect_answers])
+  const [answers, setAnswers] = useState([])
+
+  useEffect(() => {
+    setAnswers([correct_answer, ...incorrect_answers])
+  },[correct_answer, incorrect_answers])
 
   useEffect(() => {
     setAnswers((prevState) => prevState.map((x) => decodeURI(x)))
@@ -60,7 +64,7 @@ export function Question(props) {
   }
 
   return (
-    <div>
+    <div className="question">
       <h3>{decodeURIComponent(question)}</h3>
       {answers.map((elem, index) => (
         <AnswerButton

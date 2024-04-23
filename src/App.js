@@ -16,7 +16,7 @@ export function App() {
   }
 
   function setMainComponent(value) {
-    setDropMenu((prevState) => !prevState)
+    setDropMenu(false)
     setRenderedComponent(value)
   }
 
@@ -37,7 +37,11 @@ export function App() {
 
   return (
     <div className="main">
-      <Navbar toggleDropMenu={toggleDropMenu} dropMenu={dropMenu} />
+      <Navbar 
+        toggleDropMenu={toggleDropMenu} 
+        dropMenu={dropMenu} 
+        setMainComponent={setMainComponent} 
+      />
       {dropMenu && <DropDownMenu setMainComponent={setMainComponent} />}
       {renderGame(renderedComponent)}
     </div>

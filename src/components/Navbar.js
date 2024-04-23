@@ -1,7 +1,12 @@
 export function Navbar(props) {
   return (
     <nav>
-      <h1>Mind Games</h1>
+      <button 
+        onClick={() => props.setMainComponent(-1)} 
+        className="home-button"
+      >
+          <h1>Mind Games</h1>
+      </button>
       <button onClick={props.toggleDropMenu} className="nav-button">
         <div>
           {props.dropMenu ? (

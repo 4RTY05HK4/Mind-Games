@@ -12,23 +12,25 @@ export function TriviaGame() {
     const data = await res.json()
     setQuestions(data.results)
     setGameRunning(true)
+    setPoints(0)
+    setAnswers(0)
   }
 
   const [Points, setPoints] = useState(0)
-  const [noAnswers, setNoAnswers] = useState(0)
+  const [noAnswers, setAnswers] = useState(0)
 
   function addPoint() {
     setPoints((prevState) => prevState + 1)
   }
 
   function incAnswers() {
-    setNoAnswers((prevState) => prevState + 1)
+    setAnswers((prevState) => prevState + 1)
   }
 
   return (
     <div className="main-trivia">
       {gameRunning ? (
-        <div>
+        <div className="questions">
           {questions.map((i, index) => (
             <Question
               key={index}
@@ -38,8 +40,11 @@ export function TriviaGame() {
             />
           ))}
           {noAnswers >= 10 && (
-            <div>
+            <div className="result-reset">
               <h1>You got {Points}/10!</h1>
+              <button onClick={() => getTrivia()} className="button-reset">
+                Again?
+              </button>
             </div>
           )}
         </div>
