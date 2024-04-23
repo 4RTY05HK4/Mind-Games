@@ -14,6 +14,7 @@ export function TriviaGame() {
     setGameRunning(true)
     setPoints(0)
     setAnswers(0)
+    window.scrollTo({top: 0, left: 0, behavior: "smooth"})
   }
 
   const [Points, setPoints] = useState(0)
