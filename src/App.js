@@ -9,7 +9,7 @@ import { Welcome } from "./components/Welcome"
 export function App() {
   const [dropMenu, setDropMenu] = useState(false)
 
-  const [renderedComponent, setRenderedComponent] = useState(-1)
+  const [renderedComponent, setRenderedComponent] = useState(0)
 
   function toggleDropMenu() {
     setDropMenu((prevState) => !prevState)
