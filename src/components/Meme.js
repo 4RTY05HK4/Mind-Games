@@ -46,6 +46,7 @@ export const Meme = () => {
 
   return (
     <main className="main-meme">
+      <h4>This component was made during React course on Scrimba.com</h4>
       <div className="form">
         <div className="form-labeled-input">
           <label htmlFor="top-text">Top text</label>
@@ -84,6 +85,7 @@ export const Meme = () => {
         <h2 className="meme-text top">{meme.topText}</h2>
         <h2 className="meme-text bottom">{meme.bottomText}</h2>
       </div>
+
     </main>
   )
 }

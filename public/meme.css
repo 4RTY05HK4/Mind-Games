@@ -6,6 +6,10 @@
     text-align: left;
 }
 
+.main-meme > h4 {
+    text-align: center;
+}
+
 .form{
     width: 100%;
     display: grid;
